@@ -1,0 +1,93 @@
+table gold_kpis
+	lineageTag: bfa2829f-2a88-4c29-b39b-bc691bd389f8
+	sourceLineageTag: [dbo].[gold_kpis]
+
+	column total_transactions
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2c90f4dc-3692-474b-bad0-e2f0e0eb5b70
+		sourceLineageTag: total_transactions
+		summarizeBy: sum
+		sourceColumn: total_transactions
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_frauds
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: a502deac-5c47-4657-81cd-9cc871ef347a
+		sourceLineageTag: total_frauds
+		summarizeBy: sum
+		sourceColumn: total_frauds
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_legit
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 62f4421a-8c0d-49ca-b4aa-37f55f69a9b8
+		sourceLineageTag: total_legit
+		summarizeBy: sum
+		sourceColumn: total_legit
+
+		annotation SummarizationSetBy = Automatic
+
+	column overall_fraud_rate
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 2a06510a-34ff-4a10-8b52-ab77e246e5c2
+		sourceLineageTag: overall_fraud_rate
+		summarizeBy: sum
+		sourceColumn: overall_fraud_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_fraud_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: aaa75436-ad8d-470c-8f55-20d6f89ee641
+		sourceLineageTag: total_fraud_amount
+		summarizeBy: sum
+		sourceColumn: total_fraud_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_transaction_amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 3094b3aa-a17f-4b2f-b255-e25a910513b5
+		sourceLineageTag: avg_transaction_amount
+		summarizeBy: sum
+		sourceColumn: avg_transaction_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column report_generated_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e8ea4de9-4c80-400b-980e-1cc65939776d
+		sourceLineageTag: report_generated_at
+		summarizeBy: none
+		sourceColumn: report_generated_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_kpis = entity
+		mode: directLake
+		source
+			entityName: gold_kpis
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

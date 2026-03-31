@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "eda_analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8ed0243a-e870-bb41-480b-e560d307ad5b"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MLModel",
+    "displayName": "fraud-detection-model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a3436f2e-3d55-a7da-4164-8dc18b6ec156"
+  }
+}

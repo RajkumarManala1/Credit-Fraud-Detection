@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Fraud Detection Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7a410260-c035-8824-4ced-dee2340f2a4c"
+  }
+}

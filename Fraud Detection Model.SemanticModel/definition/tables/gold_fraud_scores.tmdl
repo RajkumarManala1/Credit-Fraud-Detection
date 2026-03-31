@@ -1,0 +1,111 @@
+table gold_fraud_scores
+	lineageTag: c3d9078e-7877-4163-bab2-b1c60fb70f4b
+	sourceLineageTag: [dbo].[gold_fraud_scores]
+
+	column id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7c9c5f18-1584-4df1-93f5-4348b6046802
+		sourceLineageTag: id
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f7bdda31-2d7c-4cea-8e55-a8f3a8117e18
+		sourceLineageTag: Amount
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Class
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e9a470a2-a461-4db7-9cf5-7976faa92803
+		sourceLineageTag: Class
+		summarizeBy: sum
+		sourceColumn: Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_prediction
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 6adde531-4ce7-4519-80f9-c6ef70b2dea2
+		sourceLineageTag: fraud_prediction
+		summarizeBy: sum
+		sourceColumn: fraud_prediction
+
+		annotation SummarizationSetBy = Automatic
+
+	column fraud_probability
+		dataType: double
+		sourceProviderType: real
+		lineageTag: aa49be9e-7cec-4dd8-834b-922b3f92a98a
+		sourceLineageTag: fraud_probability
+		summarizeBy: sum
+		sourceColumn: fraud_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column risk_category
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b49be175-24c2-4da1-a655-fc5dfe3c82e8
+		sourceLineageTag: risk_category
+		summarizeBy: none
+		sourceColumn: risk_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column scored_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: c4c79941-d47b-468e-866f-95fff70b1107
+		sourceLineageTag: scored_at
+		summarizeBy: none
+		sourceColumn: scored_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a6b60b79-4fe1-45ac-9689-900332e5cc65
+		sourceLineageTag: model_name
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_version
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7e4a4596-943a-4c12-9c80-8faa1e5eb610
+		sourceLineageTag: model_version
+		summarizeBy: none
+		sourceColumn: model_version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_fraud_scores = entity
+		mode: directLake
+		source
+			entityName: gold_fraud_scores
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

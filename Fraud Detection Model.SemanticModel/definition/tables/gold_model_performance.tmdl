@@ -1,0 +1,127 @@
+table gold_model_performance
+	lineageTag: 2ad60c15-a1a6-43d2-8eb8-0e589fa9f162
+	sourceLineageTag: [dbo].[gold_model_performance]
+
+	column model_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1830ff10-2e2b-4ca8-8fc6-eea1e5045b33
+		sourceLineageTag: model_name
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_version
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4ecb5012-28e7-46c6-a1df-6582485144d0
+		sourceLineageTag: model_version
+		summarizeBy: sum
+		sourceColumn: model_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column accuracy
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 4dbd1dd3-9887-424c-be24-30ee7e4eaed7
+		sourceLineageTag: accuracy
+		summarizeBy: sum
+		sourceColumn: accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column precision
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 68ea156b-c5fc-425f-a32c-6e8e3cc73785
+		sourceLineageTag: precision
+		summarizeBy: sum
+		sourceColumn: precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column recall
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 2005c610-f2b4-4894-b689-7462a1fb0c93
+		sourceLineageTag: recall
+		summarizeBy: sum
+		sourceColumn: recall
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column f1_score
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 02f40c3f-6c1b-48b9-b444-fd17143b63e2
+		sourceLineageTag: f1_score
+		summarizeBy: sum
+		sourceColumn: f1_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column auc_roc
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 51f4db53-b72b-445c-8d31-8cf38ea30841
+		sourceLineageTag: auc_roc
+		summarizeBy: sum
+		sourceColumn: auc_roc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_scored
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 7be183b9-fbfb-40d6-a3cf-9ff70fd3f21c
+		sourceLineageTag: total_scored
+		summarizeBy: sum
+		sourceColumn: total_scored
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_flagged
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e0e687b2-15fe-464a-8499-578aff959fff
+		sourceLineageTag: total_flagged
+		summarizeBy: sum
+		sourceColumn: total_flagged
+
+		annotation SummarizationSetBy = Automatic
+
+	column scored_at
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e2677656-4fd1-41a9-9d54-cfbeddc1a23c
+		sourceLineageTag: scored_at
+		summarizeBy: none
+		sourceColumn: scored_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_model_performance = entity
+		mode: directLake
+		source
+			entityName: gold_model_performance
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

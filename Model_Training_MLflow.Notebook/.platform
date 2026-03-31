@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Model_Training_MLflow"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "531a02a7-7a91-8808-4a29-94aa9b680a82"
+  }
+}
